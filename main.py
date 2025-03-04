@@ -30,4 +30,4 @@ def redirect_to_url(short_url):
     return redirect(url)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
