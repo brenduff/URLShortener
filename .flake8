@@ -1,2 +1,7 @@
-max-line-length = 88
+max-line-length = 200
+ignore =
+    E203  # whitespace before ':'
+    E266  # too many leading '#' for block comments
+    E501  # line too long
+    W503  # line break before binary operator
 exclude = .git,__pycache__,venv,.venv,.gitignore,.vscode,.idea,.mypy_cache,.pytest_cache,.tox,.nox,build,dist,*.egg-info,*.egg,.cache,.eggs
