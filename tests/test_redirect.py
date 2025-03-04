@@ -21,6 +21,7 @@ def client():
     if os.path.exists("urls.json"):
         os.remove("urls.json")
 
+
 def test_index_get(client):
     """
     Test that a GET request to the index route returns a 200 status code.
@@ -28,6 +29,7 @@ def test_index_get(client):
     response = client.get('/')
     assert response.status_code == 200
     # Optionally, you might check for some expected content if you have a known index.html template
+
 
 def test_create_short_url(client):
     """
@@ -41,6 +43,7 @@ def test_create_short_url(client):
 
     # Verify that the global dictionary has stored the URL
     assert any(url == test_url for url in shortened_urls.values())
+
 
 def test_redirect_to_url(client):
     """
@@ -65,6 +68,7 @@ def test_redirect_to_url(client):
     # Verify that the Location header matches the original URL
     assert response.headers['Location'] == test_url
 
+
 def test_invalid_short_url(client):
     """
     Test that accessing an invalid/unknown short URL returns a 404 error.
@@ -73,6 +77,7 @@ def test_invalid_short_url(client):
     assert response.status_code == 404
     assert b"URL not found" in response.data
 
+
 def test_generate_short_url_length():
     """
     Test that generate_short_url returns a string of length 6.
@@ -80,6 +85,7 @@ def test_generate_short_url_length():
     short_url = generate_short_url()
     assert isinstance(short_url, str)
     assert len(short_url) == 6
+
 
 def test_generate_short_url_uniqueness():
     """

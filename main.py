@@ -6,8 +6,10 @@ from flask import Flask, render_template, redirect, url_for, request
 app = Flask(__name__)
 shortened_urls = {}
 
+
 def generate_short_url(length=6):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -21,6 +23,7 @@ def index():
             json.dump(shortened_urls, file)
         return f"Shortened URL: <a href='{url_for('redirect_to_url', short_url=short_url, _external=True)}'>{url_for('redirect_to_url', short_url=short_url, _external=True)}</a>"
     return render_template('index.html')
+
 
 @app.route('/<short_url>')
 def redirect_to_url(short_url):
