@@ -4,4 +4,8 @@ ignore =
     E266  # too many leading '#' for block comments
     E501  # line too long
     W503  # line break before binary operator
+    E261
+    E305
+    W293
+    W292
 exclude = .git,__pycache__,venv,.venv,.gitignore,.vscode,.idea,.mypy_cache,.pytest_cache,.tox,.nox,build,dist,*.egg-info,*.egg,.cache,.eggs
