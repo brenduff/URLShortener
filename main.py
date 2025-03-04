@@ -7,7 +7,7 @@ app = Flask(__name__)
 shortened_urls = {}
 
 def generate_short_url(length=6):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
