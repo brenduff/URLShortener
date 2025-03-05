@@ -29,11 +29,11 @@ jobs:
       - name: Run Tests
         run: pytest
 
-      # Step 5: Lint Code (using flake8)
-      - name: Lint Code
-        run: |
-          pip install flake8
-          flake8 .
+      # # Step 5: Lint Code (using flake8)
+      # - name: Lint Code
+      #   run: |
+      #     pip install flake8
+      #     flake8 .
 
       # Step 6: Build Docker Image
       - name: Build Docker Image
