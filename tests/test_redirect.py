@@ -87,3 +87,5 @@ def test_generate_short_url_uniqueness():
     """
     urls = {generate_short_url() for _ in range(100)}
     assert len(urls) == 100
+
+
